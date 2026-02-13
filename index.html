@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="preload" as="image" href="./assets/hero.jpg">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
@@ -9,8 +10,8 @@
 <body>
 <nav class="navbar">
   <div class="nav-left">
-    <a href="https://www.instagram.com/estudiomarteprod" class="nav-link">Instagram</a>
-    <a href="https://www.youtube.com/@fearisonmars" class="nav-link">Youtube</a>
+    <a href="https://www.instagram.com/estudiomarteprod" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
+    <a href="https://www.youtube.com/@fearisonmars" target="_blank" rel="noopener noreferrer" class="nav-link">Youtube</a>
   </div>
 
   <div class="nav-center">
@@ -31,7 +32,7 @@
     </div>
   </header>
 
-  <section class="section about fade">
+  <section id="about" class="section about fade">
     <h2>Sobre mí</h2>
     <p>
       Producción musical enfocada en atmósferas, emoción y minimalismo.
@@ -39,7 +40,7 @@
     </p>
   </section>
 
-  <section class="section projects fade">
+  <section id="projects" class="section projects fade">
     <h2>Proyectos</h2>
 
     <div class="projects-grid">
@@ -55,9 +56,9 @@
     </div>
   </section>
 
-  <section class="section contact fade">
+  <section id="contact" class="section contact fade">
     <h2>Contacto</h2>
-    <p>federico@email.com</p>
+    <p>federicoandresmarazzi@gmail.com</p>
   </section>
 
   <script src="js/main.js"></script>
