@@ -74,9 +74,10 @@ body {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
+
 
 .project-card {
   background: var(--bg-secondary);
@@ -181,4 +182,133 @@ body {
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* PROJECT AUDIO */
+
+.project-audio {
+  width: 100%;
+  margin-top: 20px;
+  filter: invert(1);
+}
+
+/* LINKS DENTRO DEL CARD */
+
+.project-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 18px;
+}
+
+.project-links a {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: var(--accent);
+}
+
+/* ABOUT – editorial layout */
+
+.about {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(0,0,0,0)
+  );
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.about-title span {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.about-text {
+  max-width: 640px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-title span {
+    font-size: 0.8rem;
+  }
+}
+
+/* ABOUT – centering fix */
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* PROJECTS – editorial layout (igual que ABOUT) */
+
+.projects-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects-grid-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.projects-title span {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.projects-content {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects-title {
+  padding-top: 160px;
 }
