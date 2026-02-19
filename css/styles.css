@@ -1,10 +1,19 @@
+/* =========================
+   VARIABLES
+========================= */
+
 :root {
-  --bg-main: #0b0d12;
-  --bg-secondary: #11131a;
-  --accent: #d16b7c; /* rosa marciano */
-  --text-main: #e6e6e6;
-  --text-muted: #a0a0a0;
+  --bg-main: #0f121a;
+  --bg-secondary: #151a26;
+  --bg-soft: #1b2030;
+  --accent: #d16b7c;
+  --text-main: #f0f0f0;
+  --text-muted: #b0b3c0;
 }
+
+/* =========================
+   RESET + BASE
+========================= */
 
 * {
   margin: 0;
@@ -14,14 +23,15 @@
 
 body {
   font-family: system-ui, sans-serif;
-  background: var(--bg-main);
+  background: linear-gradient(to bottom, #0f121a, #0b0d12);
   color: var(--text-main);
   line-height: 1.6;
+  padding-top: 80px; /* espacio navbar */
 }
 
-
-
-/* HERO */
+/* =========================
+   HERO (VIDEO)
+========================= */
 
 @keyframes fadeUp {
   from {
@@ -34,111 +44,64 @@ body {
   }
 }
 
-.hero {
+.hero-video {
+  position: relative;
   height: 100vh;
-  background:
-    radial-gradient(circle at 30% 30%, #1a1d29, #05060a),
-    radial-gradient(circle at 70% 70%, #0b1020, #02030a);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  letter-spacing: 2px;
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  filter: saturate(0.7) contrast(0.9);
 }
 
-.hero p {
-  margin-top: 10px;
-  color: var(--accent);
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(15,18,26,0.2),
+    rgba(11,13,18,0.9)
+  );
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   animation: fadeUp 0.8s ease-out forwards;
 }
 
-/* SECTIONS */
+.hero-video h1 {
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+}
+
+.hero-video p {
+  margin-top: 12px;
+  color: var(--accent);
+}
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
   padding: 100px 10%;
 }
 
-.section h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
-
-/* PROJECTS */
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  align-items: start;
-}
-
-
-
-.project-card {
-  background: var(--bg-secondary);
-  padding: 30px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(209, 107, 124, 0.3);
-}
-
-.project-card h3 {
-  margin-bottom: 10px;
-  color: var(--accent);
-}
-
-.project-card:hover .video-wrapper iframe {
-  transform: scale(1.03);
-  transition: transform 0.6s ease;
-}
-
-
-/* VIDEO EMBED RESPONSIVE */
-
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 ratio */
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-
-/* FADE IN */
-
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
   position: fixed;
@@ -151,8 +114,8 @@ body {
   z-index: 100;
   background: linear-gradient(
     to bottom,
-    rgba(5, 6, 10, 0.7),
-    rgba(5, 6, 10, 0)
+    rgba(15,18,26,0.6),
+    rgba(15,18,26,0)
   );
   backdrop-filter: blur(6px);
 }
@@ -163,13 +126,8 @@ body {
   gap: 20px;
 }
 
-.nav-left {
-  justify-content: flex-start;
-}
-
-.nav-right {
-  justify-content: flex-end;
-}
+.nav-left { justify-content: flex-start; }
+.nav-right { justify-content: flex-end; }
 
 .nav-link {
   font-size: 0.85rem;
@@ -183,19 +141,6 @@ body {
 .nav-link:hover {
   color: var(--accent);
   transform: scale(1.05);
-}
-
-.nav-logo {
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-  color: var(--text-main);
-  opacity: 0.85;
-}
-
-/* Espacio para que el hero no quede tapado */
-body {
-  padding-top: 80px;
 }
 
 .nav-link::after {
@@ -213,7 +158,94 @@ body {
   width: 100%;
 }
 
-/* PROJECT AUDIO */
+.nav-logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+#projects {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.projects-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects-grid-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.projects-title span {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+.projects-title {
+  padding-top: 160px;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.project-card {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-secondary),
+    #111420
+  );
+  padding: 30px;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(209, 107, 124, 0.25);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+/* VIDEO RESPONSIVE */
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0b0d12;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* AUDIO */
 
 .project-audio {
   width: 100%;
@@ -221,7 +253,7 @@ body {
   filter: invert(1);
 }
 
-/* LINKS DENTRO DEL CARD */
+/* LINKS */
 
 .project-links {
   margin-top: 15px;
@@ -241,14 +273,21 @@ body {
   color: var(--accent);
 }
 
-/* ABOUT – editorial layout */
+/* =========================
+   ABOUT
+========================= */
 
 .about {
   background: linear-gradient(
     to bottom,
-    rgba(255,255,255,0.02),
+    var(--bg-soft),
     rgba(0,0,0,0)
   );
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .about-grid {
@@ -271,7 +310,6 @@ body {
 
 .about-text p {
   font-size: 1rem;
-  color: var(--text-main);
   line-height: 1.8;
   margin-bottom: 24px;
 }
@@ -280,64 +318,44 @@ body {
   margin-bottom: 0;
 }
 
-/* Responsive */
+/* =========================
+   FADE ANIMATION
+========================= */
+
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
+
+  .hero-bg {
+    display: none;
+  }
+
+  .hero-video {
+    background:
+      radial-gradient(circle at 30% 30%, #1a1d29, #05060a),
+      radial-gradient(circle at 70% 70%, #0b1020, #02030a);
+  }
+
+  .projects-grid-layout,
   .about-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .about-title span {
-    font-size: 0.8rem;
-  }
-}
-
-/* ABOUT – centering fix */
-
-.about-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* PROJECTS – editorial layout (igual que ABOUT) */
-
-.projects-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.projects-grid-layout {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 60px;
-  align-items: flex-start;
-}
-
-.projects-title span {
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  color: var(--accent);
-  opacity: 0.8;
-}
-
-.projects-content {
-  width: 100%;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .projects-grid-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
-}
-
-.projects-title {
-  padding-top: 160px;
 }

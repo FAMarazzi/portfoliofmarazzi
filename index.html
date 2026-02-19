@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="preload" as="image" href="./assets/hero.jpg">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
@@ -25,12 +24,19 @@
   </div>
 </nav>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Fede Marazzi</h1>
-      <p>Producer · Beatmaker · Mix & Master</p>
-    </div>
-  </header>
+  <header class="hero hero-video">
+  <video autoplay muted loop playsinline class="hero-bg">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Fede Marazzi</h1>
+    <p>Producer · Beatmaker · Mix & Master</p>
+  </div>
+</header>
+
 
   <section id="projects" class="section projects fade">
     <div class="projects-container">
@@ -47,7 +53,7 @@
                         <p>Dark trap</p>
 
                         <audio class="project-audio" controls>
-                            <source src="assets/Ares Dark Trap.mp3" type="audio/mpeg">
+                            <source src="assets/audio/Ares Dark Trap.mp3" type="audio/mpeg">
                         </audio>
 
                         <div class="project-links">
@@ -60,7 +66,7 @@
                         <p>Lo-fi / Ambient</p>
 
                         <audio class="project-audio" controls>
-                            <source src="assets/Estudio Marte Lofi Rainy Nights.mp3" type="audio/mpeg">
+                            <source src="assets/audio/Estudio Marte Lofi Rainy Nights.mp3" type="audio/mpeg">
                         </audio>
 
                         <div class="project-links">
