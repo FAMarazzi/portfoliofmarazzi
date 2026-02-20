@@ -1,5 +1,7 @@
 const faders = document.querySelectorAll('.fade');
 const audios = document.querySelectorAll("audio");
+const toggle = document.querySelector('.nav-toggle');
+const navbar = document.querySelector('.navbar');
 
 audios.forEach(audio => {
   audio.addEventListener("play", () => {
@@ -20,3 +22,8 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 faders.forEach(fade => observer.observe(fade));
+
+
+toggle.addEventListener('click', () => {
+  navbar.classList.toggle('open');
+});
