@@ -170,22 +170,12 @@ body {
 ========================= */
 #projects {
   position: relative;
-  background:
-    radial-gradient(
-      circle at 30% 20%,
-      rgba(255, 255, 255, 0.04),
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 70% 80%,
-      rgba(209, 107, 124, 0.05),
-      transparent 50%
-    ),
-    linear-gradient(
-      to bottom,
-      #121624,
-      #0f121a
-    );
+  background: linear-gradient(
+    to bottom,
+    #121624 0%,
+    #10131d 60%,
+    #0f121a 100%
+  );
 }
 
 .projects-container {
@@ -225,6 +215,10 @@ body {
   border-radius: 14px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.project-card {
+  background: #151a26;
+} 
 
 .project-card:hover {
   transform: scale(1.03);
@@ -432,3 +426,74 @@ body {
     margin-top: 20px;
   }
 }
+
+/* =========================
+   CONTACT (MISMA LÓGICA QUE PROJECTS)
+========================= */
+
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-grid-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.contact-title span {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  opacity: 0.8;
+  padding-top: 60px;
+}
+
+.contact-content {
+  max-width: 640px;
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.contact-mail {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  text-decoration: none;
+  position: relative;
+}
+
+.contact-mail::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+.contact-mail:hover {
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-title span {
+    padding-top: 0;
+  }
+}
+
