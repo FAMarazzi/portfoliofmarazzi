@@ -354,4 +354,21 @@ body {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+  
+  .navbar {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .nav-left,
+  .nav-right {
+    justify-content: center;
+  }
+
+  .nav-left,
+  .nav-center,
+  .nav-right {
+    flex-wrap: wrap;
+  }
 }
