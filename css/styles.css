@@ -339,10 +339,6 @@ body {
 
 @media (max-width: 768px) {
 
-  .hero-bg {
-    display: none;
-  }
-
   .hero-video {
     background:
       radial-gradient(circle at 30% 30%, #1a1d29, #05060a),
