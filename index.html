@@ -3,170 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fede Marazzi</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Fede Marazzi — Estudio Marte</title>
   <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-left">
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <span class="nav-logo">ESTUDIO MARTE</span>
+    <div class="nav-links" id="nav-links">
       <a href="https://www.instagram.com/estudiomarteprod" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
-      <a href="https://www.youtube.com/@fearisonmars" target="_blank" rel="noopener noreferrer" class="nav-link">Youtube</a>
-    </div>
-
-    <div class="nav-center">
-      <span class="nav-logo">ESTUDIO MARTE</span>
-    </div>
-
-    <div class="nav-right">
+      <a href="https://www.youtube.com/@fedumarazzi" target="_blank" rel="noopener noreferrer" class="nav-link">YouTube</a>
+      <div class="nav-sep"></div>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
-
-    <!-- 🔥 AGREGÁ ESTO -->
-    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+      <span></span><span></span>
+    </button>
   </nav>
 
-  <header class="hero hero-video">
-  <video
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="metadata"
-  poster="/assets/hero.jpg"
-  class="hero-bg"
->
-  <source src="/assets/hero.mp4" type="video/mp4">
-</video>
+  <!-- HERO -->
+  <header class="hero">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/hero.jpg" class="hero-bg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Buenos Aires &nbsp;·&nbsp; AR</p>
+      <h1 class="hero-title">
+        <span class="hero-line">Fede</span>
+        <span class="hero-line">Marazzi</span>
+      </h1>
+      <p class="hero-sub">Producer &nbsp;&nbsp;·&nbsp;&nbsp; Beatmaker &nbsp;&nbsp;·&nbsp;&nbsp; Mix &amp; Master</p>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
 
+  <!-- PROJECTS -->
+  <section id="projects" class="section fade">
+    <div class="section-inner">
+      <hr class="section-rule">
+      <span class="section-label">01 &mdash; Projects</span>
+      <div class="projects-grid">
 
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1>Fede Marazzi</h1>
-    <p>Producer · Beatmaker · Mix & Master</p>
-  </div>
-</header>
-
-
-  <section id="projects" class="section projects fade">
-    <div class="projects-container">
-        <div class="projects-grid-layout">
-
-            <div class="projects-title">
-                <span>PROJECTS</span>
+        <div class="project-card">
+          <div class="card-top">
+            <span class="card-num">001</span>
+            <span class="card-tag">Dark Trap</span>
+          </div>
+          <h3 class="card-title">Beat — Ares</h3>
+          <div class="player" data-src="assets/audio/Ares Dark Trap.mp3">
+            <button class="play-btn" aria-label="Play/Pause">
+              <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24"><rect x="6" y="3" width="4" height="18"/><rect x="14" y="3" width="4" height="18"/></svg>
+            </button>
+            <div class="player-right">
+              <div class="player-seek"><div class="player-fill"></div></div>
+              <div class="player-times">
+                <span class="t-cur">0:00</span>
+                <span class="t-tot">—:——</span>
+              </div>
             </div>
+          </div>
+          <a href="https://www.youtube.com/watch?v=gH3AmAaJx5k" target="_blank" rel="noopener noreferrer" class="card-link">↗ YouTube</a>
+        </div>
 
-            <div class="projects-content">
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Beat - Ares</h3>
-                        <p>Dark trap</p>
-
-                        <audio class="project-audio" controls controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false;">
-                            <source src="assets/audio/Ares Dark Trap.mp3" type="audio/mpeg">
-                        </audio>
-
-                        <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=gH3AmAaJx5k" target="_blank" rel="noopener noreferrer">YouTube</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <h3>Beat - Rainy Nights</h3>
-                        <p>Lo-fi / Ambient</p>
-
-                        <audio class="project-audio" controls controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false;">
-                            <source src="assets/audio/Estudio Marte Lofi Rainy Nights.mp3" type="audio/mpeg">
-                        </audio>
-
-                        <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=uOwFaFodUKI" target="_blank" rel="noopener noreferrer">YouTube</a>
-                        </div>
-                    </div>
-
-
-                    <div class="project-card">
-                        <h3>Beat — Mars Night</h3>
-                        <p>Lo-fi / Ambient</p>
-
-                        <audio class="project-audio" controls controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false;">
-                            <source src="audio/mars-night.mp3" type="audio/mpeg">
-                        </audio>
-
-                        <div class="project-links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <h3>Beat — Mars Night</h3>
-                        <p>Lo-fi / Ambient</p>
-
-                        <audio class="project-audio" controls controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false;">
-                            <source src="audio/mars-night.mp3" type="audio/mpeg">
-                        </audio>
-
-                        <div class="project-links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="project-card">
+          <div class="card-top">
+            <span class="card-num">002</span>
+            <span class="card-tag">Lo-fi / Ambient</span>
+          </div>
+          <h3 class="card-title">Beat — Rainy Nights</h3>
+          <div class="player" data-src="assets/audio/Estudio Marte Lofi Rainy Nights.mp3">
+            <button class="play-btn" aria-label="Play/Pause">
+              <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24"><rect x="6" y="3" width="4" height="18"/><rect x="14" y="3" width="4" height="18"/></svg>
+            </button>
+            <div class="player-right">
+              <div class="player-seek"><div class="player-fill"></div></div>
+              <div class="player-times">
+                <span class="t-cur">0:00</span>
+                <span class="t-tot">—:——</span>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="section about fade">
-  <div class="about-container">
-    <div class="about-grid">
-        <div class="about-title">
-        <span>ABOUT</span>
+          </div>
+          <a href="https://www.youtube.com/watch?v=uOwFaFodUKI" target="_blank" rel="noopener noreferrer" class="card-link">↗ YouTube</a>
         </div>
 
-        <div class="about-text">
-        <p>
-            I’m a music producer and beatmaker focused on modern, emotional sound.
-            I work on beats, mixing, and mastering, balancing artistic intention
-            with technical clarity.
-        </p>
-
-        <p>
-            My background combines technical training and hands-on production,
-            with a strong interest in atmosphere, texture, and detail.
-        </p>
+        <div class="project-card">
+          <div class="card-top">
+            <span class="card-num">003</span>
+            <span class="card-tag">Lo-fi / Ambient</span>
+          </div>
+          <h3 class="card-title">Beat — Mars Night</h3>
+          <div class="player" data-src="audio/mars-night.mp3">
+            <button class="play-btn" aria-label="Play/Pause">
+              <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24"><rect x="6" y="3" width="4" height="18"/><rect x="14" y="3" width="4" height="18"/></svg>
+            </button>
+            <div class="player-right">
+              <div class="player-seek"><div class="player-fill"></div></div>
+              <div class="player-times">
+                <span class="t-cur">0:00</span>
+                <span class="t-tot">—:——</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="card-link dead">↗ YouTube</a>
         </div>
-    </div>
-  </div>
-</section>
 
+        <div class="project-card">
+          <div class="card-top">
+            <span class="card-num">004</span>
+            <span class="card-tag">Lo-fi / Ambient</span>
+          </div>
+          <h3 class="card-title">Beat — Mars Night</h3>
+          <div class="player" data-src="audio/mars-night.mp3">
+            <button class="play-btn" aria-label="Play/Pause">
+              <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24"><rect x="6" y="3" width="4" height="18"/><rect x="14" y="3" width="4" height="18"/></svg>
+            </button>
+            <div class="player-right">
+              <div class="player-seek"><div class="player-fill"></div></div>
+              <div class="player-times">
+                <span class="t-cur">0:00</span>
+                <span class="t-tot">—:——</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="card-link dead">↗ YouTube</a>
+        </div>
 
-<section id="contact" class="section contact fade">
-  <div class="contact-container">
-    <div class="contact-grid-layout">
-
-      <div class="contact-title">
-        <span>CONTACT</span>
       </div>
-
-      <div class="contact-content">
-        <p class="contact-text">
-          Open to collaborations, production work and mixing projects.
-        </p>
-
-        <a
-          href="mailto:federicoandresmarazzi@gmail.com"
-          class="contact-mail"
-        >
-          federicoandresmarazzi@gmail.com
-        </a>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section fade">
+    <div class="section-inner">
+      <hr class="section-rule">
+      <span class="section-label">02 &mdash; About</span>
+      <div class="about-layout">
+        <h2 class="about-hed">Sound built<br><em>with intention.</em></h2>
+        <div class="about-body">
+          <p>I'm a music producer and beatmaker focused on modern, emotional sound. I work on beats, mixing, and mastering, balancing artistic intention with technical clarity.</p>
+          <p>My background combines technical training and hands-on production, with a strong interest in atmosphere, texture, and detail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section fade">
+    <div class="section-inner">
+      <hr class="section-rule">
+      <span class="section-label">03 &mdash; Contact</span>
+      <p class="contact-sub">Open to collaborations, production work, and mixing projects.</p>
+      <a href="mailto:federicoandresmarazzi@gmail.com" class="contact-email">
+        federicoandresmarazzi@gmail.com
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2025 Estudio Marte</span>
+    <span>Fede Marazzi &mdash; Producer</span>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
